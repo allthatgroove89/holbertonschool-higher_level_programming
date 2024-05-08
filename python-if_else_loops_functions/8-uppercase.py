@@ -1,4 +1,10 @@
 #!/usr/bin/python3
 
 def uppercase(s):
-    print("{}".format (s.upper()))
+    result = ""
+    for char in s:
+        if 'a' <= char <= 'z':
+            result += chr(ord(char) - 32)
+        else:
+            result += char
+    print("{}".format(result))

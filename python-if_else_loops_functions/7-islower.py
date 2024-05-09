@@ -2,7 +2,7 @@
 
 def islower(c):
     if c == '':
-        return False
+        raise ValueError("Input cannot be an empty string")
     elif "a" <= c <= "z":
         return True
     else:

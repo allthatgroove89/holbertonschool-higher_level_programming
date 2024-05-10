@@ -5,7 +5,8 @@ import sys
 def main():
     args = sys.argv[1:]
     if not args:
-        print(".")
+        not_arg_word = "arguments"
+        print(str(len(args)) + ' ' + not_arg_word + ".")
     else:
         arg_word = "argument" if len(args) == 1 else "arguments"
         print(str(len(args)) + ' ' + arg_word + ":")

@@ -1,4 +1,12 @@
 #!/usr/bin/python3
 
-def no_c(my_string):
-    return ''.join([char for char in my_string if char not in 'cC'])
+def print_matrix_integer(matrix=[[]]):
+    for i in range(len(matrix)):
+        if matrix[i]:
+            print(' '.join(map(str, matrix[i])), end='')
+        if i != len(matrix) - 1 and i + 1 < len(matrix):
+            print('$')
+        else:
+            print('$')
+    else:
+        print('$')

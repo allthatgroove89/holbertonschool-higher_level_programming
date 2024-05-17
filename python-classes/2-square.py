@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This module defines a class Square.
-The Square class defines a square by its size, which defaults to 0 if not provided.
+The Square class defines a square by its size, which defaults
+to 0 if not provided.
 """
 
 

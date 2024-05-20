@@ -7,7 +7,8 @@ Args: matrix, div
 
 
 def matrix_divided(matrix, div):
-    """Divide a Matrix by two """
+    """Divide a Matrix by two
+    """
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of\
                 integers/floats")

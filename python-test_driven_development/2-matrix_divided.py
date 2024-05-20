@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-
+"""
+Task: 2-matrix_divided
+Test: Cases for unittest
+Args: matrix, div
+"""
 def matrix_divided(matrix, div):
     # Check if div is an integer or a floar, otherwise
     # TypeError

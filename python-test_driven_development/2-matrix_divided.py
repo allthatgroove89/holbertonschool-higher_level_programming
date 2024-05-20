@@ -5,23 +5,21 @@ Test: Cases for unittest
 Args: matrix, div
 """
 def matrix_divided(matrix, div):
-    # Check if div is an integer or a floar, otherwise
-    # TypeError
-    if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
-    # Check if div is zero, otherwise raise a TypeError
+    """Divide a Matrix by two """
+    if type(matrix) != list:
+        raise TypeError("matrix must be a matrix (list of lists) of\
+                integers/floats")
+    size = None
+    for row in matrix:
+        if type(row) != list:
+            raise TypeError("matrix must be a matrix (list of lists) of\
+                    integers/floats")
+        if size is None:
+            size = len(row)
+        elif size != len(row):
+            raise TypeError("Each row of the matrix must have the same size")
+    if type(div) not in [int, float]:
+            raise TypeError("div must be a number")
     if div == 0:
-        raise TypeError("division by zero")
-    # Check if matrix is a list of lists of
-    # integers or floats, otherwise raise a TypeError
-    if isinstance(matrix, (int, float)):
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats")
-    # Check if all rows in the matrix have the same size,
-    # otherwise raise a TypeError
-    if not all(len(row) == len(matrix[0])for row in matrix):
-        raise TypeError("Each row of the matrix must ahve the same size")
-    # Divide each element in the matrix by div and round to 2 decimal places
-    result = [[round(element / div, 2) for element in row] for row in matrix]
-    # Return the resulting matrix
-    return result
+            raise ZeroDivisionError("division by zero")
+    return [[round(element / div, 2) for element in row] for row in matrix]

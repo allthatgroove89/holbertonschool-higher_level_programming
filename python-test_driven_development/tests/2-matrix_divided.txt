@@ -1,8 +1,5 @@
-
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>>
-
-Case 0: POSITIVE NUMBERS:
 
 >>> matrix = [
 ... [1, 2, 3],
@@ -14,13 +11,10 @@ Case 0: POSITIVE NUMBERS:
 >>>
 
 
-CASE 1: NEGATIVE NUMBERS:
 
     >>> print(matrix_divided(matrix, -2))
     [[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
 >>>
-
-CASE 2: DIVIDE BY ZERO:
 
 >>> matrix = [
 ... [4, 5, 0],

@@ -8,6 +8,14 @@ Args: matrix, div
 
 def matrix_divided(matrix, div):
     """Divide a Matrix by two
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    >>> matrix_divided(matrix, -2)
+    [[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
+    >>> matrix = [[4, 5, 0]]
+    >>> matrix_divided(matrix, 1)
+    [[4.0, 5.0, 0.0]]
     """
     if not isinstance(matrix, list):
         raise TypeError

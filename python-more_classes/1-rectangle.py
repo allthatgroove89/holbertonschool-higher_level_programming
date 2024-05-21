@@ -7,9 +7,10 @@ It defines its width and height
 
 
 class Rectangle:
+    """Rectangle Module"""
     def __init__(self, width=0, height=0):
-        self.height = height
-        self.width = width
+        self._Rectangle__height = height
+        self._Rectangle__width = width
     """Instance attribute to retrieve value"""
     @property
     def width(self):

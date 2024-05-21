@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""
+Creates Rectangle class
+"""
+
+
 class Rectangle:
+    """An empty Rectangle class"""
     pass
-
-
-def __init__(self, width, height):
-    self.width = width
-    self.height = height

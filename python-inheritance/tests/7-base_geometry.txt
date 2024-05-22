@@ -1,0 +1,30 @@
+# Test case 1: Test the area method
+try:
+    bg = BaseGeometry()
+    bg.area()
+except Exception as e:
+    print(e)  # Should print: area() is not implemented
+
+# Test case 2: Test the integer_validator method with a valid integer
+try:
+    bg.integer_validator("age", 20)  # Should not raise any exceptions
+except Exception as e:
+    print(e)
+
+# Test case 3: Test the integer_validator method with a string instead of an integer
+try:
+    bg.integer_validator("age", "twenty")
+except Exception as e:
+    print(e)  # Should print: age must be an integer
+
+# Test case 4: Test the integer_validator method with a negative integer
+try:
+    bg.integer_validator("age", -20)
+except Exception as e:
+    print(e)  # Should print: age must be greater than 0
+
+# Test case 5: Test the integer_validator method with zero
+try:
+    bg.integer_validator("age", 0)
+except Exception as e:
+    print(e)  # Should print: age must be greater than 0

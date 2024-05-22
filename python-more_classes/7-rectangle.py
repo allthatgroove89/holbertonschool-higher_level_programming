@@ -18,11 +18,11 @@ class Rectangle:
         # a new instance is created
 
     def __str__(self):
+        """ Prints a rectangle with # character"""
         if self._Rectangle__height == 0 or self._Rectangle__width == 0:
             return ""
-        line = str(Rectangle.print_symbol) * self._Rectangle__width
-        rectangle = (line + '\n') * self._Rectangle__height
-        return rectangle[:-1]
+        return ((str(self.print_symbol) * self._Rectangle__width + '\n') *
+                self._Rectangle__height)[:-1]
 
     def __repr__(self):
         """String representation of the rectangle"""

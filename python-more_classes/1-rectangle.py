@@ -12,12 +12,11 @@ class Rectangle:
         self._Rectangle__height = height
         self._Rectangle__width = width
 
-    """Method property"""
     @property
     def width(self):
+        """Method property"""
         return self._Rectangle__width
 
-    """Property setter"""
     @width.setter
     def width(self, value):
         """sets the value of widht"""
@@ -27,9 +26,9 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self._Rectangle__width = value
 
-    """Method property"""
     @property
     def height(self):
+        """Method property"""
         return self._Rectangle__height
 
     @height.setter

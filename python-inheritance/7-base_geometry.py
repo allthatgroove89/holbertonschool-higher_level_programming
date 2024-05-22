@@ -5,7 +5,7 @@ BaseGeometry class
 
 
 class BaseGeometry:
-
+    """BaseGeometry"""
     def area(self):
         """Raise exception if the area
         of a shape is not implemented"""

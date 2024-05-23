@@ -24,7 +24,7 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(8, float('nan'))
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
->>> add_integer(float('inf'), 1)  # This will raise an OverflowError
-    Traceback (most recent call last):
-        ...
-    OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer

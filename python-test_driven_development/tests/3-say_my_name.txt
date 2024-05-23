@@ -7,3 +7,11 @@ My name is Walter White
 Traceback (most recent call last):
 ...
 TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+>>> say_my_name(123, "Doe")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>> say_my_name("John", 456)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string

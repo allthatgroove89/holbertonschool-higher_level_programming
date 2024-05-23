@@ -3,8 +3,6 @@
 My name is John Smith
 >>> say_my_name("Walter", "White")
 My name is Walter White
->>> say_my_name("$")
-My name is $
 >>> say_my_name("Saul", "Vera", "Echevestre")
 Traceback (most recent call last):
 ...

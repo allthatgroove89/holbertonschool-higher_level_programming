@@ -22,11 +22,11 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """
+    Initialize Rectangle
+    """
     def __init__(self, width, height):
-        """
-        Initialize Rectangle
-        """
         self.integer_validator("width", width)
-        self.integer_validator("width", height)
         self.___width = width
+        self.integer_validator("width", height)
         self.__height = height

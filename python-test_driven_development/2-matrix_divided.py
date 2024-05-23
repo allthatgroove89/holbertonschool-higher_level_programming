@@ -21,18 +21,21 @@ def matrix_divided(matrix, div):
     TypeError: matrix must be a matrix (array of arrays of integers/floats)
     """
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix\
+            (list of lists) of integers/floats")
     size = None
     for row in matrix:
         if not isinstance(row, list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix\
+                (list of lists) of integers/floats")
         if size is None:
             size = len(row)
         elif size != len(row):
             raise TypeError("Each row of the matrix must have the same size")
         for num in row:
             if not isinstance(num, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix \
+                    (list of lists) of integers/floats")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:

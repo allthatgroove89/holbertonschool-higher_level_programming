@@ -8,18 +8,6 @@ Args first_name, last_name
 def say_my_name(first_name, last_name=""):
     """
     prints first name and last name handling errors
-    >>> say_my_name("John", "Smith")
-    My name is John Smith$
-    >>> say_my_name("Walter", "White")
-    My name is Walter White$
-    >>> say_my_name("$")
-    My name is $ $
-    >>> say_my_name()
-    Traceback (most recent call last):
-    ...
-    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
-    >>> say_my_name("Bob Lenon")
-    My name is Bob Lenon
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")

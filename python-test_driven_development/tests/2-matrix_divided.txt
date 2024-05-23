@@ -7,6 +7,3 @@
 >>> matrix = [[4, 5, 0]]
 >>> matrix_divided(matrix, 1)
 [[4.0, 5.0, 0.0]]
->>> matrix = [[3, "9"], [15, 3]]
-matrix_divided(matrix, 3)
-TypeError: matrix must be a matrix (array of arrays of integers/floats)

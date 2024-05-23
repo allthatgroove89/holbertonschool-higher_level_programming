@@ -7,9 +7,11 @@ class Rectangle(BaseGeometry):
     """Initialize Rectangle"""
 
     def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("width", height)
+        
+        BaseGeometry.integer_validator(self, "height", height)
+        BaseGeometry.integer_validator(self, "width", width)
+
+        self.___width = width
         self.__height = height
 
     def area(self):

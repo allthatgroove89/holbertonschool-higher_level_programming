@@ -1,14 +1,9 @@
 #!/usr/bin/python3
-"""
-"""
+"""Unittest fro max_integer([..])"""
 
 
 import unittest
 max_integer = __import__('6-max_integer').max_integer
-
-
-def max_integer(list=[]):
-    """Unittest fro max_integer([..])"""
 
 
 class TestMaxInteger(unittest.TestCase):

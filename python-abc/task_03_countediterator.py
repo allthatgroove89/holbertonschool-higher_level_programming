@@ -12,7 +12,7 @@ class CountedIterator:
             self.counter += 1
             return item
         except StopIteration:
-            raise StopIteration("No more item to iterate")
+            raise
 
     def get_count(self):
         return self.counter

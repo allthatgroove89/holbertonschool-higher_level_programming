@@ -18,7 +18,7 @@ class Student:
             return self.__dict__
         else:
             new_dict = {}
-            for IstAttrs in attrs:
-                if IstAttrs in self.__dict__.keys():
-                    new_dict[IstAttrs] = self.__dict__[IstAttrs]
+            for IsAttrs in attrs:
+                if IsAttrs in self.__dict__.keys():
+                    new_dict[IsAttrs] = self.__dict__[IsAttrs]
             return new_dict

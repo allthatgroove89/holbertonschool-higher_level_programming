@@ -16,9 +16,8 @@ class CustomObject:
         return f"CustomObject: {self.Name}, {self.age} {self.is_student}"
 
     def display(self):
-        print(
-            f"Name: {self.Name}\nAge:
-            {self.age}\nIs Student: {self.is_student}")
+        print(f"Name: {self.Name}\nAge:{self.age}\
+            \nIs Student: {self.is_student}")
 
     def serialize(self, filename):
         try:
@@ -32,7 +31,7 @@ class CustomObject:
     def deserialize(cls, filename):
         try:
             with open(filename, 'rb') as input_file:
-                pickle.load(cls, filename)
+                pickle.load(input_file)
         except Exception as e:
             print(f"An error occurred while deserializing the object: {e}")
             return None

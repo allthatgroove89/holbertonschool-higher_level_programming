@@ -15,16 +15,11 @@ def serialize_to_xml(dictionary, filename):
 
 
 def deserialize_from_xml(filename):
-    tree = ET.parse(filename)
-    root = tree.getroot()
-
-    def convert_value(value):
-        try:
-            return int(value)
-        except ValueError:
-            try:
-                return float(value)
-            except ValueError:
-                if value.lower() in ['true', 'false']:
-                    return value.lower() == 'true'
-                return value
+    try:
+        tree = ET.parse(filename)
+        root = tree.getroot()
+        dictionary = {child.tag: child.text for child in root}
+        return dictionary
+    except (ET.ParseError, FileNotFoundError) as e:
+        print(f"Error deserializing XML: {e}")
+        return None

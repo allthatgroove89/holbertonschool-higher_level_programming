@@ -15,7 +15,18 @@ def deserialize_from_xml(filename):
     tree = ET.parse(filename)
     root = tree.getroot()
 
+    def convert_value(value):
+        try:
+            return int(value)
+        except ValueError:
+            try:
+                return float(value)
+            except ValueError:
+                if value.lower() in ['true', 'false']:
+                    return value.lower() == 'true'
+                return value
+
     dictionary = {}
     for child in root:
-        dictionary[child.tag] = child.text
+        dictionary[child.tag] = convert_value(child.text)
     return dictionary

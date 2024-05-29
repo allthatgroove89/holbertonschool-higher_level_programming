@@ -13,6 +13,7 @@ def serialize_to_xml(dictionary, filename):
     with open(filename, 'wb') as file:
         tree.write(file)
 
+
 def deserialize_from_xml(filename):
     tree = ET.parse(filename)
     root = tree.getroot()

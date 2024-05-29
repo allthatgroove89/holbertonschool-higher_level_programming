@@ -28,8 +28,3 @@ def deserialize_from_xml(filename):
                 if value.lower() in ['true', 'false']:
                     return value.lower() == 'true'
                 return value
-
-    dictionary = {}
-    for child in root:
-        dictionary[child.tag] = convert_value(child.text)
-    return dictionary

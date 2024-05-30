@@ -35,7 +35,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
-            self.wfile.write(bytes("Endpoint not found", "utf8"))
+            self.wfile.write(bytes("404 Not Found", "utf8"))
 
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
 @app.route("/")
 def home():
-    return "Welcome to the Flask API!."
+    return "Welcome to the Flask API!"
 
 
 @app.route("/data")
@@ -39,13 +39,12 @@ def add_user():
     user_data = request.get_json()
     username = user_data['username']
     users[username] = {
+        'username' : username,
         'name': user_data['name'],
         'age': user_data['age'],
         'city': user_data['city']
     }
-    user = users[username]
-    user['username'] = username
-    return jsonify({"message": "User added", "user":user})
+    return jsonify({"message": "User added", "user":users[username]})
 
 
 if __name__ == "__main__":

@@ -2,11 +2,11 @@
 
 from flask import Flask
 from flask import jsonify
-
+from flask import request
 
 app = Flask(__name__)
 
-user_dict = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
 
 @app.route("/")
@@ -16,7 +16,7 @@ def home():
 
 @app.route("/data")
 def data():
-    return jsonify(list(user_dict.keys()))
+    return jsonify(list(users.keys()))
 
 
 @app.route("/status")
@@ -24,13 +24,27 @@ def status():
     return "OK"
 
 
-@app.route("/user_dict/<username>")
-def user(username):
-    if username in user_dict:
-        return jsonify(user_dict[username])
+@app.route("/users/<username>")
+def user_dict(username):
+    if username in users:
+        user = users[username]
+        user['username'] = username
+        return jsonify(users[username])
     else:
         return "404 Not Found", 404
 
+@app.route("/add_user", methods=['POST'])
+def add_user():
+    user_data = request.get_json()
+    username = user_data['username']
+    users[username] = {
+        'name': user_data['name'],
+        'age': user_data['age'],
+        'city': user_data['city']
+    }
+    user = users[username]
+    user['username'] = username
+    return jsonify(users)
 
 if __name__ == "__main__":
     app.run()

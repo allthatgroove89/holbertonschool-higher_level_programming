@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module contains a Flask API with several routes.
+"""
 
 from flask import Flask, jsonify, request
 
@@ -10,21 +13,33 @@ users = {}
 
 @app.route("/")
 def home():
+    """
+    Home route. Returns a welcome message.
+    """
     return "Welcome to the Flask API!"
 
 
 @app.route("/data")
-def data():
+def get_usernames():
+    """
+    Returns a list of usernames stored in the 'users' dictionary.
+    """
     return jsonify(list(users.keys()))
 
 
 @app.route("/status")
 def status():
+    """
+    Returns a status message.
+    """
     return "OK"
 
 
 @app.route("/users/<username>")
 def get_user(username):
+    """
+    Returns the data for a given user, or a 404 error if the user is not found.
+    """
     user = users.get(username)
     if user:
         return jsonify(user)

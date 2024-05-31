@@ -16,7 +16,7 @@ def home():
 
 @app.route("/data")
 def data():
-    return jsonify(list(users.keys()))
+    return jsonify(users.keys())
 
 
 @app.route("/status")
@@ -31,7 +31,7 @@ def user_dict(username):
         user['username'] = username
         return jsonify(users[username])
     else:
-        return "404 Not Found", 404
+        return jsonify({'error': 'User Not Found'}), 404
 
 
 @app.route("/add_user", methods=['POST'])
@@ -46,6 +46,6 @@ def add_user():
     }
     return jsonify({"message": "User added", "user":users[username]})
 
-
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, passthrough_errors=True,
+    use_debugger=False, use_reloader=False)

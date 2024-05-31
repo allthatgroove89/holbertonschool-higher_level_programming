@@ -58,15 +58,6 @@ def admin_only():
     return jsonify(message="Admin Access: Granted"), 200
 
 
-@app.route('/admin-only', methods=['GET'])
-@jwt_required()
-def admin_only():
-    claims = get_jwt()
-    if claims['role'] != 'admin':
-        return jsonify({"msg": "Access forbidden"}), 403
-    return jsonify(message="Admin Access: Granted"), 200
-
-
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401

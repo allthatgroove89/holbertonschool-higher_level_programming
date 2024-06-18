@@ -1,2 +1,5 @@
--- This script inserts a new row into the first_table in the current database
-INSERT INTO first_table (id, name) VALUES (89, 'Best School');
+-- Lists all records of the second table of the database
+SELECT score, name
+FROM second_table
+WHERE name IS NOT NULL AND name != ''
+ORDER BY score DESC;

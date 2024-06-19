@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Execute the SQL query
-    cur.execute("""SELECT cities.id, states.name, cities.name
+    cur.execute("""SELECT cities.id, cities.name, states.name
                 FROM cities
                 JOIN states ON cities.state_id = states.id
                 ORDER BY cities.id ASC""")

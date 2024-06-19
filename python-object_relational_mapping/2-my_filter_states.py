@@ -15,8 +15,8 @@ if __name__ == "__main__":
                          passwd=password, db=database_name)
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id ASC",
-                (state_name_searched,))
+    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+    cur.execute(query, (state_name_searched))
     rows = cur.fetchall()
     for row in rows:
         print(row)

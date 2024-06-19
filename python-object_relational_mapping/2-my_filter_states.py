@@ -6,6 +6,7 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
+    """ establishes a connection to the database """
     username = argv[1]
     password = argv[2]
     database_name = argv[3]

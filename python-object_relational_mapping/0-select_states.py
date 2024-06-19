@@ -1,13 +1,17 @@
 #!/usr/bin/python3
+"""script that lists all states from the database"""
+
+
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
 
-    db = MySQLdb.connect(host="localhost", port=3306,user=username, passwd=password, db=database_name)
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=database_name)
 
     cur = db.cursor()
 

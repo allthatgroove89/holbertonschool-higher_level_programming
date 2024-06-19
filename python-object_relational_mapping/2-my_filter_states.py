@@ -7,19 +7,15 @@ from sys import argv
 
 if __name__ == "__main__":
     """ establishes a connection to the database """
-    username = argv[1]
-    password = argv[2]
-    database_name = argv[3]
-    state_name_searched = argv[4]
+    db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=username,
-                         passwd=password, db=database_name)
-
-    cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
-    cur.execute(query, (state_name_searched))
-    rows = cur.fetchall()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
+    id ASC".format(argv[4]))
+    rows = cursor.fetchall()
     for row in rows:
-        print(row)
-    cur.close()
-    db.close()
+        if row[1] == argv[4]:
+            print(row)
+        cursor.close()
+        db.close()

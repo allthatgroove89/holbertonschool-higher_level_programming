@@ -16,7 +16,7 @@ if __name__ == "__main__":
     engine = create_engine(
         f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}")
     Session = sessionmaker(bind=engine)
-    session = Session
+    session = Session()
     # Query the State object with id=2, retreive the object
     state_to_update = session.query(State).filter(State.id == 2).first()
 

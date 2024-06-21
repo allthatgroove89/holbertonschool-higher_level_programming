@@ -19,9 +19,9 @@ if __name__ == "__main__":
     query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
     cursor.execute(query, (argv[4],))
     # Fetch the first row from the result set
-    row = cursor.fetchall()
+    rows = cursor.fetchall()
     # If a row was fetched, print it
-    if row is not None:
+    for row in rows:
         print(row)
     # Close the cursor and the database connection
     cursor.close()

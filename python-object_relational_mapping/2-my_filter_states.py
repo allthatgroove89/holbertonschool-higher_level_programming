@@ -17,5 +17,6 @@ if __name__ == "__main__":
     for row in rows:
         if row[1] == argv[4]:
             print(row)
-        cursor.close()
-        db.close()
+    # Close the cursor and database connection outside of the loop
+    cursor.close()
+    db.close()

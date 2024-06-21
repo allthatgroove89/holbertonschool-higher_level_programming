@@ -19,5 +19,5 @@ if __name__ == "__main__":
 
     state_to_delete = session.query(State).filter(State.name).first()
     if state_to_delete:
-        state_to_delete.name = "a"
+        state_to_delete.name = "Aa"
         session.commit()

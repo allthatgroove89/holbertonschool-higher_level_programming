@@ -3,20 +3,24 @@
 
 
 import MySQLdb
-from sys import argv
+import sys
 
 if __name__ == "__main__":
     """ establishes a connection to the database """
-    db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    state_name_searched = sys.argv[4]
+
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=database_name)
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
-    id ASC".format(argv[4]))
+    query = "SELECT * FROM states WHERE name = %s ORDER BYE id ASC"
+    cursor.execute(query, (sys.argv[4],))
     rows = cursor.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
     # Close the cursor and database connection outside of the loop
     cursor.close()
     db.close()

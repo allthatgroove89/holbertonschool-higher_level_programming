@@ -18,10 +18,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).first()
-    if states:
-        for state in states:
-            print(state.name)
+    state = session.query(State).first()
+    if state:
+            print("{}: {}".format(state.id,state.name))
     else:
         print("No states found in database")
 

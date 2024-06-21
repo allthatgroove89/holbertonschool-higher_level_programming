@@ -16,8 +16,8 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
     # Execute the SQL query
-    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC",
-    cursor.execute(query, (state_name_searched,))
+    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+    cursor.execute(query, (argv[4],))
     # Fetch the first row from the result set
     row = cursor.fetchone()
     # If a row was fetched, print it

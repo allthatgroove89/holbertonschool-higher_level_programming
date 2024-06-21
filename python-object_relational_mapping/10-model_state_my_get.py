@@ -22,8 +22,8 @@ if __name__ == "__main__":
     session = Session()
 
     try:
-        states = session.query(State).filter
+        state = session.query(State).filter
         (State.name == state_name_to_search).one()
-        print(states.id)
+        print(state.id)
     except NoResultFound:
         print("Not found")

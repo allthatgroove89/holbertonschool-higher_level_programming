@@ -13,11 +13,12 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine
+    engine = create_engine(
+        f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}")
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_to_delete = session.query(State).filter(State.name).first()
-    if state_to_delete:
-        state_to_delete.name = "Aa"
-        session.commit()
+    state_to_delete = session.query(State).filter(State.name.like('%a%')).all()
+    for state in state_to_delete:
+        session.delete(state)
+    session.commit()

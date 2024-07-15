@@ -29,9 +29,9 @@ def generate_invitations(template, attendees):
         output_file = f'output_{index}.txt'
         with open(output_file, 'w') as output:
             output.write(formatted_content)
-    generate_invitations(template, attendees)
 
-    attendees = [
+
+attendees = [
         {
             "name": "Alice",
             "event_title": "Python Conference",
@@ -51,8 +51,12 @@ def generate_invitations(template, attendees):
             "event_location": "Boston"
         }
     ]
-    for i in range(1, len(attendees) + 1):
-        output_file = f'output_{i}.txt'
+
+
+generate_invitations("template.txt", attendees)
+
+for i in range(1, len(attendees) + 1):
+    output_file = f'output_{i}.txt'
     assert os.path.exists(output_file), f"{output_file} does not exist"
     with open(output_file, 'r') as file:
         content = file.read()

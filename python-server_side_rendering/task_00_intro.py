@@ -32,7 +32,6 @@ def generate_invitations(template, attendees):
     {"name": "Charlie", "event_title": "AI Summit", "event_date": None, "event_location": "Boston"}
 ]
 
-    generate_invitations(template, attendees)
 
     for i in range(1, 4):
         output_file = f'output_{i}.txt'
@@ -42,3 +41,4 @@ def generate_invitations(template, attendees):
             print(content)
     print("all tests passed")
 
+    generate_invitations(template, attendees)

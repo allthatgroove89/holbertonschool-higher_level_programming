@@ -2,16 +2,16 @@ import os
 
 
 def generate_invitations(template, attendees):
-    with open('template.txt', 'r') as file:
+    with open(template, 'r') as file:
         template = file.read()
 
     # Check input types and Handle empty inputs
     if not isinstance(template, str):
         raise TypeError('template content must be a string')
+    if not template.strip():
+        return
     if not isinstance(attendees, list):
         raise TypeError('attendees must be a list')
-    if not template:
-        raise ValueError("Template is empty, no output files generated.")
     if not attendees:
         raise ValueError("No data provided, no output files generated.")
 
@@ -49,7 +49,8 @@ attendees = [
             "event_title": "AI Summit",
             "event_date": None,
             "event_location": "Boston"
-        }
+        },
+        {}
     ]
 
 
